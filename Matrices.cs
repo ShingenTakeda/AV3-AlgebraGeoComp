@@ -79,6 +79,26 @@ class Matrices
         return result;
     }
 
+    public float[,] mul(float n, float[,] m1)
+    {
+        float[,] result = new float[4,4];
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if(i == 0 || i == 1 || i == 2 || i == 3)
+                {
+                    result[i, j] = m1[i, j] * n;
+                }
+                else
+                {
+                    result[i, j] = 0;
+                }
+            }
+        }
+        return result;
+    }
+
     public Matriz4 tranpose(Matriz4 asArray)
     {
         Matriz4 m = new Matriz4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -92,13 +112,17 @@ class Matrices
         return m;
     }
 
-    public float[] vetorCentro(Matriz4 asArray)
+    public Matriz4 vetorCentro(Matriz4 asArray)
     {
-        float[] vetorCentro = new float[4];
-        vetorCentro[0] = (asArray._11 + asArray._12 + asArray._13 + asArray._14);
-        vetorCentro[1] = (asArray._21 + asArray._22 + asArray._23 + asArray._24);
-        vetorCentro[2] = (asArray._31 + asArray._32 + asArray._33 + asArray._34);
-        vetorCentro[3] = (asArray._41 + asArray._42 + asArray._43 + asArray._44);
+        Matriz4 vetorCentro = new Matriz4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        float buffer1 = (asArray._11 + asArray._12 + asArray._13 + asArray._14);
+        vetorCentro.SetasArray(0, buffer1);
+        float buffer2 = (asArray._21 + asArray._22 + asArray._23 + asArray._24);
+        vetorCentro.SetasArray(4, buffer2);
+        float buffer3 = (asArray._31 + asArray._32 + asArray._33 + asArray._34);
+        vetorCentro.SetasArray(8, buffer3);
+        float buffer4 = (asArray._41 + asArray._42 + asArray._43 + asArray._44);
+        vetorCentro.SetasArray(12, buffer4);
         return vetorCentro;
     }
 
