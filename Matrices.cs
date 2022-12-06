@@ -9,7 +9,7 @@ public struct Matriz4
 
     public float this[int i]
     {
-        get { return asArray[i * 4]; }
+        get { return asArray[i]; }
     }
 
     public Matriz4(float m11, float m12, float m13, float m14,
