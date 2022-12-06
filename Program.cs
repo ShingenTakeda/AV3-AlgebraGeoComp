@@ -14,15 +14,15 @@
 
         float [,] ar_mat = m.ArrayOfArray(matriz);
         float[,] ar_trans = m.ArrayOfArray(ArrayT);
-        float[,] resultado = m.dot(ar_mat, ar_trans);
-        //m.PrintPrettyArray(resultado);
-
         float[,] ar_vetor = m.ArrayOfArray(vCentro);
-        //m.PrintPrettyArray(ar_vetor);
-        float[,] resultado2 = m.dot(resultado, ar_vetor);
-        //m.PrintPrettyArray(resultado2);
 
-        float[,] resultado3 = m.mul(2 , resultado2);
-        m.PrintPrettyArray(resultado3);
+        float[,] resMulArr = m.dot(ar_mat, ar_trans);
+        //m.PrintPrettyArray(resMulArr);
+        float[,] resMulArrVetor = m.dot(resMulArr, ar_vetor);
+        //m.PrintPrettyArray(resMulArrVetor);
+        float norma = m.norma(resMulArrVetor);
+        //Console.WriteLine(norma);
+        float[,] a1 = m.mul(1/norma, resMulArrVetor);
+        m.PrintPrettyVetor(a1);
     }
 }

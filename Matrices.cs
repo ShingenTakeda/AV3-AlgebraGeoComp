@@ -99,10 +99,10 @@ class Matrices
         return result;
     }
 
-    public float norma(Matriz4 v)
+    public float norma(float[,] v)
     {
-        float soma = (v[0] * v[0]) + (v[4] * v[4]) + (v[8] * v[8]) + (v[12] * v[12]);
-        float n = (float)Math.Sqrt(soma);
+        float soma = (v[0, 0] * v[0, 0]) + (v[1,0] * v[1,0]) + (v[2,0] * v[2,0]) + (v[3,0] * v[3,0]);
+        float n = (float)Math.Round(Math.Sqrt(soma), 4);
         return n;
     }
 
@@ -184,6 +184,20 @@ class Matrices
                 else
                 {
                     Console.Write(ar[i,j] + ", ");
+                }
+            }
+        }
+    }
+
+    public void PrintPrettyVetor(float [,]ar)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(j == 0)
+                {
+                    Console.Write("{" + Math.Round(ar[i,j], 6) + "}\n");
                 }
             }
         }
