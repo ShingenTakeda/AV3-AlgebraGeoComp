@@ -27,7 +27,5 @@
                             , 1, 0, 0, 0);
 
         PrintPrettyMatrix(m);
-        //Matrices m = new Matrices();
-        // float[] asArrayT = m.tranpose(asArray);
     }
 }
