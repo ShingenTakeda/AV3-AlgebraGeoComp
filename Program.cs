@@ -3,9 +3,9 @@
     public static void Main()
     {
         Matriz4 matriz = new Matriz4(0, 1, 1, 0
-                            , 0, 0, 1, 0
-                            , 1, 0, 0, 1
-                            , 1, 0, 0, 0);
+                                    ,0, 0, 1, 0
+                                    ,1, 0, 0, 1
+                                    ,1, 0, 0, 0);
         
         Matrices m = new Matrices();
         //m.PrintPrettyMatrix(matriz);
