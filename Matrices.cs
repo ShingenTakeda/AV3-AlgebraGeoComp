@@ -99,6 +99,13 @@ class Matrices
         return result;
     }
 
+    public float norma(Matriz4 v)
+    {
+        float soma = (v[0] * v[0]) + (v[4] * v[4]) + (v[8] * v[8]) + (v[12] * v[12]);
+        float n = (float)Math.Sqrt(soma);
+        return n;
+    }
+
     public Matriz4 tranpose(Matriz4 asArray)
     {
         Matriz4 m = new Matriz4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
