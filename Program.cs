@@ -26,7 +26,7 @@
                             , 1, 0, 0, 1
                             , 1, 0, 0, 0);
         PrintPrettyMatrix(Matriz);
-
+        
         Matrices m = new Matrices();
         float[] ArrayT = m.tranpose(Matriz);
         float[] vCentro = m.vetorCentro(Matriz);
