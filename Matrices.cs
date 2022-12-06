@@ -52,3 +52,19 @@ public struct Matriz4
         asArray[15] = this._44;
     }
 }
+
+class Matrices
+{
+
+    public float[] tranpose(Matriz4 asArray)
+    {
+        float[] arrayT = new float[16];
+        for (int i = 0; i < 16; i++)
+        {
+            int row = i / 4;
+            int col = i % 4;
+            arrayT[i] = asArray[col * 4 + row];
+        }
+        return arrayT;
+    }
+}
