@@ -9,8 +9,12 @@ public struct Matriz4
 
     public float this[int i]
     {
-        get { return asArray[i]; }
-        set { asArray[i] = value; }
+        get {return asArray[i];}
+    }
+
+    public void SetasArray(int i, float valor)
+    {
+        asArray[i] = valor;
     }
 
     public Matriz4(float m11, float m12, float m13, float m14,
@@ -80,7 +84,7 @@ class Matrices
             {
                 int row = i / 4;
                 int col = i % 4;
-                m[i] = asArray[col * 4 + row];
+                m.SetasArray(i, asArray[col * 4 + row]);
             }
             return m;
         }
