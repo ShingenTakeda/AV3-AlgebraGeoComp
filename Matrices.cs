@@ -77,4 +77,60 @@ class Matrices
         vetorCentro[3] = (asArray._41 + asArray._42 + asArray._43 + asArray._44);
         return vetorCentro;
     }
+
+    public void PrintPrettyMatrix(Matriz4 m)
+    {
+        for(int i = 0; i < 16; i++)
+        {
+            if(i == 0 || i == 4 || i == 8 ||i == 12)
+            {
+                Console.Write("{ " + m[i] + ", ");
+            }
+            else if(i == 3 || i == 7 || i == 11 || i == 15)
+            {
+                Console.Write(m[i] + "}" + "\n");
+            }
+            else
+            {
+                Console.Write(m[i] + ", ");
+            }
+        }
+    }
+
+    public float [,]ArrayOfArray(Matriz4 m)
+    {
+        float [,]array = new float[4, 4];
+        int counter = 0;
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                array[i, j] = m[counter];
+                counter++;
+            }
+        }
+        return array;
+    }
+
+    public void PrintPrettyArray(float [,]ar)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(j == 0)
+                {
+                    Console.Write("{" + ar[i,j] + ", ");
+                }
+                else if(j == 3)
+                {
+                    Console.Write(ar[i,j] + "} " + "\n");
+                }
+                else
+                {
+                    Console.Write(ar[i,j] + ", ");
+                }
+            }
+        }
+    }
 }
