@@ -23,6 +23,6 @@
         float norma = m.norma(resMulArrVetor);
         //Console.WriteLine(norma);
         float[,] a1 = m.mul(1/norma, resMulArrVetor);
-        m.PrintPrettyVetor(a1);
+        m.PrintPrettyVetor(a1);//Printa só o vetor tirando os 0's
     }
 }
