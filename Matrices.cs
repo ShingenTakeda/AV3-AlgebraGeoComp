@@ -10,6 +10,7 @@ public struct Matriz4
     public float this[int i]
     {
         get { return asArray[i]; }
+        set { asArray[i] = value; }
     }
 
     public Matriz4(float m11, float m12, float m13, float m14,
@@ -56,33 +57,32 @@ public struct Matriz4
 class Matrices
 {
 
-    public float[][] dot(float[][] m1, float[][] m2)
+    public float[,] dot(float[,] m1, float[,] m2)
     {
-        float[][] result = new float[4][];
+        float[,] result = new float[4,4];
         for (int i = 0; i < 4; i++)
         {
-            result[i] = new float[4];
             for (int j = 0; j < 4; j++)
             {
-                result[i][j] = 0;
+                result[i, j] = 0;
                 for (int k = 0; k < 4; k++)
                 {
-                    result[i][j] += m1[i][k] * m2[k][j];
+                    result[i, j] += m1[i, k] * m2[k, j];
                 }
             }
         }
         return result;
     }
-    public float[] tranpose(Matriz4 asArray)
+    public Matriz4 tranpose(Matriz4 asArray)
         {
-            float[] arrayT = new float[16];
+            Matriz4 m = new Matriz4{};
             for (int i = 0; i < 16; i++)
             {
                 int row = i / 4;
                 int col = i % 4;
-                arrayT[i] = asArray[col * 4 + row];
+                m[i] = asArray[col * 4 + row];
             }
-            return arrayT;
+            return m;
         }
 
     public float[] vetorCentro(Matriz4 asArray)
