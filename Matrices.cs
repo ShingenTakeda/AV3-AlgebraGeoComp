@@ -1,6 +1,6 @@
-public struct Matriz4
+public class Matriz4
 {
-    float[] asArray = new float[16];
+    private float[] asArray = new float[16];
 
     public float _11, _12, _13, _14,
                _21, _22, _23, _24,
@@ -10,6 +10,7 @@ public struct Matriz4
     public float this[int i]
     {
         get {return asArray[i];}
+        set {asArray[i] = value;}
     }
 
     public void SetasArray(int i, float valor)
@@ -77,17 +78,19 @@ class Matrices
         }
         return result;
     }
+
     public Matriz4 tranpose(Matriz4 asArray)
+    {
+        Matriz4 m = new Matriz4(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        for (int i = 0; i < 16; i++)
         {
-            Matriz4 m = new Matriz4{};
-            for (int i = 0; i < 16; i++)
-            {
-                int row = i / 4;
-                int col = i % 4;
-                m.SetasArray(i, asArray[col * 4 + row]);
-            }
-            return m;
+            int row = i / 4;
+            int col = i % 4;
+            float buffer = asArray[col * 4 + row];
+            m.SetasArray(i, buffer);
         }
+        return m;
+    }
 
     public float[] vetorCentro(Matriz4 asArray)
     {
