@@ -21,11 +21,14 @@
 
     public static void Main()
     {
-        Matriz4 m = new Matriz4(0, 1, 1, 0
+        Matriz4 Matriz = new Matriz4(0, 1, 1, 0
                             , 0, 0, 1, 0
                             , 1, 0, 0, 1
                             , 1, 0, 0, 0);
+        PrintPrettyMatrix(Matriz);
 
-        PrintPrettyMatrix(m);
+        Matrices m = new Matrices();
+        float[] ArrayT = m.tranpose(Matriz);
+        float[] vCentro = m.vetorCentro(Matriz);
     }
 }

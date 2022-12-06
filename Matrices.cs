@@ -67,4 +67,14 @@ class Matrices
         }
         return arrayT;
     }
+
+    public float[] vetorCentro(Matriz4 asArray)
+    {
+        float[] vetorCentro = new float[4];
+        vetorCentro[0] = (asArray._11 + asArray._12 + asArray._13 + asArray._14);
+        vetorCentro[1] = (asArray._21 + asArray._22 + asArray._23 + asArray._24);
+        vetorCentro[2] = (asArray._31 + asArray._32 + asArray._33 + asArray._34);
+        vetorCentro[3] = (asArray._41 + asArray._42 + asArray._43 + asArray._44);
+        return vetorCentro;
+    }
 }
