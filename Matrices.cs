@@ -197,9 +197,30 @@ class Matrices
             {
                 if(j == 0)
                 {
-                    Console.Write("{" + Math.Round(ar[i,j], 6) + "}\n");
+                    Console.Write("{" + Math.Round(ar[i,j], 5) + "}\n");
                 }
             }
+        }
+    }
+
+    public void PrintPrettyVetor(float [,]ar, bool b)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(j == 0)
+                {
+                    Console.Write("{" + Math.Round(ar[i,j], 5) + "}\n");
+                }
+            }
+        }
+
+        if (b)
+        {
+            Console.WriteLine("\nOrdem Decrescente:");
+            Console.WriteLine("Segundo e Quarto sites ficaram empatados em ultimos");
+            Console.WriteLine("Primeiro e Terceiro sites ficaram empatados em primeiros");
         }
     }
 }

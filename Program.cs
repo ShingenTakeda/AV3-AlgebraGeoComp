@@ -75,5 +75,26 @@
         Console.WriteLine("\n");
         #endregion
 
+        #region Sorting
+        float[,] ordenado = a6;
+        float aux = 0;
+         for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 4; j++)
+            {
+                if(ordenado[i,j] != 0)
+                {
+                    if (ordenado[i,j] < ordenado[i+1,j])
+                    {
+                        aux = ordenado[i,j];
+                        ordenado[i,j] = ordenado[i+1,j];
+                        ordenado[i+1,j] = aux;
+                    }
+                }
+            }
+        }
+
+        m.PrintPrettyVetor(ordenado, true);
+        #endregion
     }
 }
